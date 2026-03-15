@@ -55,7 +55,7 @@ double gRec(unsigned i) {
         cout << "Base case!\n";
         return 3.2;
     }
-    
+
     return gRec(i - 1) + 1.1;
 }
 
@@ -72,5 +72,20 @@ double gRec(unsigned i) {
 *******************************************************************************/
 
 double gStack(unsigned i) {
-    // TODO
+    ArrayStack<unsigned> stack;
+
+    while (i > 0) { 
+        stack.push(i);
+        i--;
+    }
+
+    cout << "Base case!" << endl;
+    double result = 3.2;
+
+    while (!stack.isEmpty()) {
+        stack.pop();
+        result += 1.1;
+    }
+
+    return result;
 }
